@@ -1,0 +1,12 @@
+services:
+  piston:
+    build: .
+    container_name: piston
+    ports:
+      - "2001:2000"
+    tmpfs:
+      - /tmp
+      - /var/tmp
+      - /run
+    privileged: true
+    restart: unless-stopped
